@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<Template xmlns="http://wirecloud.conwet.fi.upm.es/ns/template#">
+
+    <Catalog.ResourceDescription>
+        <Vendor>SingularLogic</Vendor>
+        <Name>Users_Representation</Name>
+        <Version>0.2.5</Version>
+        <DisplayName>List of users</DisplayName>
+        <Author>Panagiotis_Athanasoulis</Author>
+        <Mail>pathanasoulis@ep.singularlogic.eu</Mail>
+        <Description>Depicts the list of users associated with a specific medical staff member. Also, any medical staff member be able to register a new user, and either modify or delete an existing user.</Description>
+        <ImageURI>images/logo.png</ImageURI>
+        <License>Apache 2.0</License>
+        <WikiURI>doc/index.html</WikiURI>
+    </Catalog.ResourceDescription>
+
+    <Platform.Preferences>
+    </Platform.Preferences>
+
+    <Platform.StateProperties>
+    </Platform.StateProperties>
+
+    <Platform.Wiring>
+        <InputEndpoint name="users"
+            type="text"
+            label="users"
+            description="List of users"
+            friendcode="users"
+        />
+        <InputEndpoint name="url"
+            type="text"
+            label="url"
+            description="APIs URL"
+            friendcode="url"
+        />
+        <InputEndpoint name="medstaffID"
+            type="text"
+            label="medical staff"
+            description="Medical staff member ID"
+            friendcode="medstaffID"
+        />
+
+        <OutputEndpoint name="reload"
+            type="text"
+            label="reload"
+            description="Reload the table of users."
+            friendcode="reload"
+        />
+    </Platform.Wiring>
+
+    <Platform.Link>
+        <XHTML href="index.html" use-platform-style="true"/>
+    </Platform.Link>
+
+    <Platform.Rendering width="18" height="35"/>
+
+</Template>

@@ -1,0 +1,179 @@
+<!-- Widget A: measurements filtering -->
+
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+    <head>
+        <meta http-equiv="Content-Type" content="application/xhtml+xml; charset=UTF-8"></meta>
+        <title>List of registered potential fallers.</title>
+        <!-- CSS -->
+        <link rel="stylesheet" type="text/css" href="css/style.css" />
+        <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css" >
+        <link rel="stylesheet" type="text/css" href="css/jqplot/jquery.jqplot.min.css" />
+        <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" >
+        <link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.3.0/css/datepicker.min.css">
+        <!-- JQPLOT JS -->
+        <script type="text/javascript" src="js/jquery-1.10.2.min.js"></script>        
+        <script type="text/javascript" src="js/bootstrap.min.js"></script>
+        <script type="text/javascript" src="js/jquery.blockUI.js"></script>
+        <script type="text/javascript" src="http://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.3.0/js/bootstrap-datepicker.js"></script>
+        <script type="text/javascript" src="js/moment.js"></script>
+        <script type="text/javascript" src="js/moment-timezone.js"></script>
+        <script type="text/javascript" src="js/main.js"></script>
+    </head>
+    <body>  
+        <div class="row">
+            <!-- add rule from -->
+            <div class="col-sm-0 hidden" id="add-user-form" style="color: gray; border:2px solid #ddd">
+                <form name="add_users" action="" onsubmit="return addUser()" method="post">
+                    <div class="row" style="background-color: #b0c4de;">  
+                        <button type='button' class='btn btn-danger btn-xs pull-right' id="close-add-user-form-btn" title='close'>
+                            <i class="fa fa-close"></i>
+                        </button>
+                        <button type='reset' class='btn btn-success btn-xs pull-right' id="clear-add-form"  title='refresh'>
+                            <i class="fa fa-refresh"></i>
+                        </button>             
+
+                    </div>
+                    <div class="row" style="background-color: #b0c4de; color: white">
+                        <div class="col-sm-12">
+                            <h4 class="user_action" style="text-align: center">Add user</h4>
+                        </div>
+                    </div>
+                    <br>
+                    <div class="row">
+                        <div class="col-sm-1"></div>
+                        <div class="col-sm-4">
+                            <label>Name*</label>
+                        </div>
+                        <div class="col-sm-7 input-group">
+                            <span class="input-group-addon"><i class="fa fa-tag fa-fw"></i></span>
+                            <input type="text" class="form-control" name="user_name" id="user_name" placeholder="name" maxlength="50" required />
+                        </div>
+                    </div>
+                    <br>
+                    <div class="row">
+                        <div class="col-sm-1"></div>
+                        <div class="col-sm-4">
+                            <label>Surname*</label>
+                        </div>
+                        <div class="col-sm-7 input-group">
+                            <span class="input-group-addon"><i class="fa fa-tag fa-fw"></i></span>
+                            <input type="text" class="form-control" name="user_surname" id="user_surname" placeholder="surname" maxlength="50" required />
+                        </div>
+                    </div>
+                    <br>
+                    <div class="row">
+                        <div class="col-sm-1"></div>
+                        <div class="col-sm-4">
+                            <label>User ID*</label>
+                        </div>
+                        <div class="col-sm-7 input-group">
+                            <span class="input-group-addon"><i class="fa fa-tag fa-fw"></i></span>
+                            <input type="text" class="form-control" name="user_uid" id="user_uid" placeholder="unique id" maxlength="50" required />
+                        </div>
+                    </div>
+                    <br>
+
+                    <div class="row">
+                        <div class="col-sm-1"></div>
+                        <div class="col-sm-4">
+                            <label>Profile*</label>
+                        </div>
+                        <div class="col-sm-7 input-group">
+                            <span class="input-group-addon"><i class="fa fa-tag fa-fw"></i></span>
+                            <input type="text" class="form-control" name="user_profile" id="user_profile" placeholder="describe user profile" maxlength="300" required />
+                        </div>
+                    </div>
+                    <br>                    
+                    <div class="row">
+                        <div class="col-sm-1"></div>
+                        <div class="col-sm-4">
+                            <label>Treatment*</label>
+                        </div>
+                        <div class="col-sm-7 input-group">
+                            <span class="input-group-addon"><i class="fa fa-tag fa-fw"></i></span>
+                            <input type="text" class="form-control" name="user_treatment" id="user_treatment" placeholder="refer treatment dateails" maxlength="300" required />
+                        </div>
+                    </div>
+                    <br>
+                    <div class="row">
+                        <div class="col-sm-1"></div>
+                        <div class="col-sm-4">
+                            <label>Birth date*</label>
+                        </div>
+                        <div class="col-sm-7 input-group date">
+                            <span class="input-group-addon"><i class="fa fa-calendar fa-fw"></i></span>
+                            <input type="text" class="form-control" name="user_birthdate" id="user_birthdate" placeholder="yyyy-MM-dd" required />
+                        </div>
+                    </div>
+                    <br>
+                    <div class="row">
+                        <div class="col-sm-1"></div>
+                        <div class="col-sm-4">
+                            <label>Email*</label>
+                        </div>
+                        <div class="col-sm-7 input-group">
+                            <span class="input-group-addon"><i class="fa fa-envelope fa-fw"></i></span>
+                            <input type="email" class="form-control" name="user_email" id="user_email" placeholder="email" required />
+                        </div>
+                    </div>
+                    <br>
+                    <div class="row">
+                        <div class="col-sm-1"></div>
+                        <div class="col-sm-4">
+                            <label>Mobile phone*</label>
+                        </div>
+                        <div class="col-sm-7 input-group">
+                            <span class="input-group-addon"><i class="fa fa-mobile fa-fw"></i></span>
+                            <input type="tel" class="form-control" name="user_phone" id="user_phone" placeholder="mobile phone" maxlength="15" required />
+                        </div>
+                    </div>
+                    <br>
+                    <div class="row">
+                        <div class="col-sm-1"></div>
+                        <div class="col-sm-4">
+                            <label>Timezone*</label>
+                        </div>
+                        <div class="col-sm-7 input-group">
+                            <span class="input-group-addon"><i class="fa fa-tag fa-fw"></i></span>
+                            <select class="form-control" name="user_timezone" id="user_timezone" required title="Select a timezone name...">
+                               <!-- get timezones list -->
+                            </select>
+                        </div>
+                    </div>
+                    <br>
+                    <div class="row">
+                        <div class="col-sm-7 pull-right">
+                            <label style="color: red;">* These fields are mandatory.</label>
+                        </div>
+                    </div>
+                    <br>
+                    <div class="row">
+                        <div class="col-sm-7 pull-right">
+                            <button type="submit" class="btn btn-default" id="submit_new_user" value="submit_new_user">
+                                <span class="fa fa-upload fa-fw fa-lg"></span> Submit
+                            </button>
+                        </div>
+                    </div>
+                </form>
+                <br>
+            </div>
+
+            <!-- rules list -->
+            <div class="col-sm-12" id="users-list">
+                <div id="users_table"></div>
+                <!-- buttons -->
+                <div class="row">
+                    <div class="col-sm-12">
+                        <button type="button" class="btn btn-primary" id="add-user-btn" value="add_user">
+                            <span class="fa fa-plus-square-o fa-fw fa-lg"></span> Add user
+                        </button>
+                        <button type="button" class="btn btn-success" id="refresh-users-btn" value="refresh_page">
+                            <span class="fa fa-refresh fa-fw fa-lg"></span> Refresh
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>        
+    </body>
+</html>

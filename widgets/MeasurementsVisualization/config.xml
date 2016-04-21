@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<Template xmlns="http://wirecloud.conwet.fi.upm.es/ns/template#">
+
+    <Catalog.ResourceDescription>
+        <Vendor>SingularLogic</Vendor>
+        <Name>Measurements_Visualization</Name>
+        <Version>0.2.2</Version>
+        <DisplayName>Measurements Visualization</DisplayName>
+        <Author>Panagiotis_Athanasoulis</Author>
+        <Mail>pathanasoulis@ep.singularlogic.eu</Mail>
+        <Description>Visualize a set of measurements for a specific biological parameter.</Description>
+        <ImageURI>images/logo.png</ImageURI>
+        <License>Apache 2.0</License>
+        <WikiURI>doc/index.html</WikiURI>
+    </Catalog.ResourceDescription>
+
+    <Platform.Preferences>
+    </Platform.Preferences>
+
+    <Platform.StateProperties>
+    </Platform.StateProperties>
+
+    <Platform.Wiring>
+        <InputEndpoint name="title"
+            type="text"
+            label="Title"
+            description="The title of the plot."
+            friendcode="title"
+        />
+        <InputEndpoint name="label"
+            type="text"
+            label="Legend"
+            description="The labels of the plot."
+            friendcode="label"
+        />
+        <InputEndpoint name="unit"
+            type="text"
+            label="Unit"
+            description="The unit of the selected biological parameter."
+            friendcode="unit"
+        />
+        <InputEndpoint name="measurements"
+            type="text"
+            label="Graph data"
+            actionlabel=""
+            description="Data input."
+            friendcode="dataset"
+        />
+        <InputEndpoint name="min"
+            type="text"
+            label="Min value"
+            actionlabel=""
+            description="Min value"
+            friendcode="minValue"
+        />
+        <InputEndpoint name="max"
+            type="text"
+            label="Max value"
+            actionlabel=""
+            description="Max value"
+            friendcode="maxValue"
+        />
+        <OutputEndpoint name="refresh"
+            type="text"
+            label="refresh"
+            description="refresh"
+            friendcode="refresh"
+        />
+    </Platform.Wiring>
+
+    <Platform.Link>
+        <XHTML href="index.html" use-platform-style="true"/>
+
+    </Platform.Link>
+
+    <Platform.Rendering width="14" height="40"/>
+
+</Template>

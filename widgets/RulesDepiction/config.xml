@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<Template xmlns="http://wirecloud.conwet.fi.upm.es/ns/template#">
+
+    <Catalog.ResourceDescription>
+        <Vendor>SingularLogic</Vendor>
+        <Name>Rules_Representation</Name>
+        <Version>0.2.6</Version>
+        <DisplayName>Table of rules</DisplayName>
+        <Author>Panagiotis_Athanasoulis</Author>
+        <Mail>pathanasoulis@ep.singularlogic.eu</Mail>
+        <Description>Depict a list of the registered rules. Also, any medical staff member may add a new rule and either edit or remove an existing rule.</Description>
+        <ImageURI>images/logo.png</ImageURI>
+        <License>Apache 2.0</License>s
+        <WikiURI>doc/index.html</WikiURI>
+    </Catalog.ResourceDescription>
+
+    <Platform.Preferences>
+    </Platform.Preferences>
+
+    <Platform.StateProperties>
+    </Platform.StateProperties>
+
+    <Platform.Wiring>
+        <InputEndpoint name="rules"
+            type="text"
+            label="rules"
+            description="The existing rules."
+            friendcode="rules_list"
+        />
+        <InputEndpoint name="parameters"
+            type="text"
+            label="parameters"
+            description="The measured biological parameters."
+            friendcode="list"
+        />
+        <InputEndpoint name="url"
+            type="text"
+            label="url"
+            description="APIs url."
+            friendcode="url"
+        />
+
+        <OutputEndpoint name="reload"
+            type="text"
+            label="reload"
+            description="Reload the table of rules."
+            friendcode="reload"
+        />
+    </Platform.Wiring>
+
+    <Platform.Link>
+        <XHTML href="index.html" use-platform-style="true"/>
+    </Platform.Link>
+
+    <Platform.Rendering width="18" height="35"/>
+
+</Template>

@@ -1,0 +1,94 @@
+<!-- Widget A: measurements filtering -->
+
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+    <head>
+        <meta http-equiv="Content-Type" content="application/xhtml+xml; charset=UTF-8"></meta>
+        <title>Search Fall Risk</title>
+        <!-- CSS -->
+        <link rel="stylesheet" type="text/css" href="css/style.css" />
+        <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css" >
+        <link rel="stylesheet" type="text/css" href="css/jqplot/jquery.jqplot.min.css" />
+        <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" >
+        <link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.3.0/css/datepicker.min.css">
+        <!-- JQPLOT JS -->
+        <script type="text/javascript" src="js/jquery-1.10.2.min.js"></script>        
+        <script type="text/javascript" src="js/bootstrap.min.js"></script>
+        <script type="text/javascript" src="js/jquery.blockUI.js"></script>
+        <script type="text/javascript" src="http://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.3.0/js/bootstrap-datepicker.js"></script>
+        <script type="text/javascript" src="js/main.js"></script>
+    </head>
+    <body>
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-12">
+                    <h5>Select user*:</h5>
+                </div>
+                <div class="col-sm-12 input-group">
+                    <span class="input-group-addon"><i class="fa fa-users fa-fw"></i></span>
+                    <select class="form-control" name="select_user" id="select_user" required title="Select a user from the following list.">
+                    <!-- get users' list from operator -->
+                    </select>
+                </div>
+            </div>
+            <br>
+            <div class="row">
+                <div class="col-sm-12">
+                    <h5>Select parameter*:</h5>
+                </div>
+                <div class="col-sm-12 input-group">
+                    <span class="input-group-addon"><i class="fa fa-list fa-fw"></i></span>
+                    <select class="form-control" name="select_param" id="select_param" required title="Select a biological parameter from the following list.">
+                    <!-- get list from operator -->
+                    </select>
+                </div>
+            </div>
+            <br>
+            <div class="row">
+                <div class="col-sm-12">
+                  <h5>Define fall risk threshold:</h5>
+                </div>
+                <div class="col-sm-12 input-group date">
+                    <span class="input-group-addon"><i class="fa fa-bell-o fa-fw"></i></span>
+                    <input type="number" min="0" max="100" class="form-control" name="risk_thresh" id="risk_thresh" maxlength="3" placeholder="fall risk range: [0-100]"/>
+                </div>
+            </div>
+            <br>
+            <div class="row">
+                <div class="col-sm-12">
+                  <h5>Select start date*:</h5>
+                </div>
+                <div class="col-sm-12 input-group date">
+                    <span class="input-group-addon"><i class="fa fa-calendar fa-fw"></i></span>
+                    <input type="text" class="form-control" name="from_date" id="from_date" maxlength="20" placeholder="yyyy/MM/dd" required />
+                </div>
+            </div>
+            <br>
+            <div class="row">
+                <div class="col-sm-12">
+                    <h5>Select end date*:</h5>
+                </div>
+                <div class="col-sm-12 input-group date">
+                    <span class="input-group-addon"><i class="fa fa-calendar fa-fw"></i></span>
+                    <input type="text" class="form-control" name="until_date" id="until_date" maxlength="20" placeholder="yyyy/MM/dd" required />
+                </div>
+            </div>
+            <br>
+            <div class="row">
+                <div class="col-sm-12">
+                    <label style="color: red;">* These fields are mandatory.</label>
+                </div>
+                <div class="col-sm-6 pull-right" style="margin-bottom: 5px">
+                    <button type="button" class="btn btn-info" name="download-risk-btn" id="download-risk-btn" >
+                        <span class="fa fa-download fa-fw fa-lg"></span> Download
+                    </button>
+                </div>
+                <div class="col-sm-6 pull-right" style="margin-bottom: 5px">
+                    <button type="button" class="btn btn-default" name="submit_btn" id="submit_button" >
+                        <span class="fa fa-line-chart fa-fw fa-lg" style="color: blue"></span> Visualize Risk
+                    </button>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>

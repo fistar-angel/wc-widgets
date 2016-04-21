@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+    xmlns:usdl-core="http://www.linked-usdl.org/ns/usdl-core#"
+    xmlns:foaf="http://xmlns.com/foaf/0.1/"
+    xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+    xmlns:dcterms="http://purl.org/dc/terms/"
+    xmlns:skos="http://www.w3.org/2004/02/skos/core#"
+    xmlns:wire="http://wirecloud.conwet.fi.upm.es/ns/widget#"
+    xmlns:vCard = "http://www.w3.org/2006/vcard/ns#"
+    xmlns:gr="http://purl.org/goodrelations/v1#">
+
+    <wire:Operator rdf:about="http://wirecloud.conwet.fi.upm.es/ns/widget#Operator">
+        <dcterms:title>Config APIs settings</dcterms:title>
+        <wire:displayName>Settings</wire:displayName>
+        <dcterms:description>Define the host:port information related to the (FRE SE) APIs</dcterms:description>
+        <dcterms:creator rdf:resource="http://portal.singularlogic.eu">Panagiotis Athanasoulis</dcterms:creator>
+        <wire:hasImageUri rdf:resource="images/logo.png"/>
+        <usdl-core:versionInfo>0.1.4</usdl-core:versionInfo>
+        <usdl-core:licence>Apache 2.0</usdl-core:licence>
+        <usdl-core:utilizedResource rdf:resource="js/jquery-1.10.2.min.js"/>
+        <usdl-core:utilizedResource rdf:resource="js/main.js"/>
+        <usdl-core:hasProvider rdf:resource="http://portal.singularlogic.eu"/>
+
+        <vCard:addr>
+            <vCard:Work>
+                <vCard:email>pathanasoulis@ep.singularlogic.eu</vCard:email>
+            </vCard:Work>
+        </vCard:addr>
+
+        <wire:hasPlatformPreference>
+            <wire:PlatformPreference rdf:ID="preference_1">
+                <wire:index>1</wire:index>
+                <dcterms:title>FRE_APIs</dcterms:title>
+                <wire:type>text</wire:type>
+                <dcterms:description>The URL of the FRE APIs</dcterms:description>
+                <rdfs:label>Host URL</rdfs:label>
+                <wire:default>http://130.206.82.133:5000</wire:default>
+            </wire:PlatformPreference>
+        </wire:hasPlatformPreference>
+
+        <wire:hasPlatformWiring>
+            <wire:PlatformWiring rdf:ID="wiring">                
+                <wire:hasOutputEndpoint>
+                    <wire:OutputEndpoint rdf:ID="output1">
+                        <dcterms:title>baseURL</dcterms:title>
+                        <dcterms:description>APIs url</dcterms:description>
+                        <wire:type>text</wire:type>
+                        <rdfs:label>url</rdfs:label>
+                        <wire:friendcode>url</wire:friendcode>
+                    </wire:OutputEndpoint>
+                </wire:hasOutputEndpoint>
+          
+                <wire:hasOutputEndpoint>
+                    <wire:OutputEndpoint rdf:ID="output2">
+                        <dcterms:title>medicalStaff</dcterms:title>
+                        <dcterms:description>Medical staff ID</dcterms:description>
+                        <wire:type>text</wire:type>
+                        <rdfs:label>medStaffID</rdfs:label>
+                        <wire:friendcode>medstaffID</wire:friendcode>
+                    </wire:OutputEndpoint>
+                </wire:hasOutputEndpoint>
+            </wire:PlatformWiring>
+        </wire:hasPlatformWiring>
+    </wire:Operator>
+
+    <foaf:Person rdf:about="http://portal.singularlogic.eu">
+        <foaf:name>SingularLogic</foaf:name>
+    </foaf:Person>
+
+    <gr:BusinessEntity rdf:about="http://portal.singularlogic.eu">
+        <foaf:name>SingularLogic</foaf:name>
+    </gr:BusinessEntity>
+
+    <usdl-core:utilizedResource rdf:about="js/jquery-1.10.2.min.js">
+        <wire:index>0</wire:index>
+    </usdl-core:utilizedResource>
+
+    <usdl-core:utilizedResource rdf:about="js/main.js">
+        <wire:index>1</wire:index>
+    </usdl-core:utilizedResource>
+
+</rdf:RDF>

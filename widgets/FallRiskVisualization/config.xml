@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<Template xmlns="http://wirecloud.conwet.fi.upm.es/ns/template#">
+
+    <Catalog.ResourceDescription>
+        <Vendor>SingularLogic</Vendor>
+        <Name>Fall_Risk_Visualization</Name>
+        <Version>0.4.0</Version>
+        <DisplayName>Fall Risk Visualization</DisplayName>
+        <Author>Panagiotis_Athanasoulis</Author>
+        <Mail>pathanasoulis@ep.singularlogic.eu</Mail>
+        <Description>Visualize the fall risk possibilities as a plot for the selected user at the predefined time period.</Description>
+        <ImageURI>images/logo.png</ImageURI>
+        <License>Apache 2.0</License>
+        <WikiURI>doc/index.html</WikiURI>
+    </Catalog.ResourceDescription>
+
+    <Platform.Preferences>
+    </Platform.Preferences>
+
+    <Platform.StateProperties>
+    </Platform.StateProperties>
+
+    <Platform.Wiring>
+        <InputEndpoint name="title"
+            type="text"
+            label="Title"
+            description="The title of the plot."
+            friendcode="title"
+        />
+        <InputEndpoint name="fallRiskInstances"
+            type="text"
+            label="Fall risk graph"
+            description="Fall risk graph."
+            friendcode="fallRiskInstances"
+        />
+        <OutputEndpoint name="refresh"
+            type="text"
+            label="refresh"
+            description="refresh"
+            friendcode="riskRefresh"
+        />
+    </Platform.Wiring>
+
+    <Platform.Link>
+        <XHTML href="index.html" use-platform-style="true"/>
+
+    </Platform.Link>
+
+    <Platform.Rendering width="14" height="40"/>
+
+</Template>

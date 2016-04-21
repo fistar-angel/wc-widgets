@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<Template xmlns="http://wirecloud.conwet.fi.upm.es/ns/template#">
+
+    <Catalog.ResourceDescription>
+        <Vendor>SingularLogic</Vendor>
+        <Name>Indivindual_Fall_Risk_Filter</Name>
+        <Version>0.2.1</Version>
+        <DisplayName>Indivindual Fall Risk Search</DisplayName>
+        <Author>Panagiotis_Athanasoulis</Author>
+        <Mail>pathanasoulis@ep.singularlogic.eu</Mail>
+        <Description>Define a set of parameters to retrieve the fall risk possibility of the user of interest.</Description>
+        <ImageURI>images/logo.png</ImageURI>
+        <License>Apache 2.0</License>
+        <WikiURI>doc/index.html</WikiURI>
+    </Catalog.ResourceDescription>
+
+    <Platform.Preferences>
+    </Platform.Preferences>
+
+    <Platform.StateProperties>
+    </Platform.StateProperties>
+
+    <Platform.Wiring>
+        <InputEndpoint name="users"
+            type="text"
+            label="users"
+            description="The list of users."
+            friendcode="users"
+        />
+        <InputEndpoint name="parameters"
+            type="text"
+            label="parameters"
+            description="The list of biologic parameters."
+            friendcode="parameters"
+        />
+        <InputEndpoint name="refresh"
+            type="text"
+            label="reload"
+            description="Reload falling risk."
+            friendcode="riskRefresh"
+        />
+        <InputEndpoint name="url"
+            type="text"
+            label="url"
+            description="APIs url"
+            friendcode="url"
+        />
+        <InputEndpoint name="medstaffID"
+            type="text"
+            label="medical staff"
+            description="Medical staff member."
+            friendcode="medstaffID"
+        />
+
+        <OutputEndpoint name="paramID"
+            type="text"
+            label="parameter"
+            description="The selected parameter ID."
+            friendcode="paramID"
+        />
+        <OutputEndpoint name="userID"
+            type="text"
+            label="user"
+            description="The user of your interest."
+            friendcode="user"
+        />
+        <OutputEndpoint name="startDate"
+            type="text"
+            label="startDate"
+            description="Define the start datetime of your interest related to the fall risk"
+            friendcode="riskStartDate"
+        />
+        <OutputEndpoint name="endDate"
+            type="text"
+            label="endDate"
+            description="Define the end datetime of your interest related to the fall risk"
+            friendcode="riskEndDate"
+        />
+        <OutputEndpoint name="riskThreshold"
+            type="text"
+            label="fall risk"
+            description="The threshold of fall risk (optional)."
+            friendcode="riskThreshold"
+        />
+    </Platform.Wiring>
+
+    <Platform.Link>
+        <XHTML href="index.html" use-platform-style="true"/>
+    </Platform.Link>
+
+    <Platform.Rendering width="5" height="32"/>
+
+</Template>
